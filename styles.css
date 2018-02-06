@@ -21,7 +21,7 @@ fieldset {
     line-height: 2.5em;
 }
 
-i{
+fieldset i{
 	display: block;
 	color: #333333;
 	line-height: 1em;

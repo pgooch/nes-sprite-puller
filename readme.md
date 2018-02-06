@@ -6,6 +6,8 @@ If you would like to try it you can find it [on this projects github page](https
 ### Notes
 Some games buy have large blank sections or area of their sprite sheet that appears to be garbage. This can be caused by various things, usually blank spaces are just that, blank spaces in the CHR data, and garbage is code or compressed graphics mixed in. Palettes are stored in different locations depending on the game, so pulling them out to automatically colorize is not possible with some slow brute-force style checking.
 
+Not all NES games used the CHR data. Games that are seemingly missing CHR data will load the PRG data, which is where the sprites are probably hidden. They will be mixed in with the game code, which will also be processed in the same NES sprite formatting effectly generated noise. A message will be placed above the sprite sheet if this was done.
+
 Occasionally you may find a ROM that does not load any information. There are two possibilities for this. First, that game does something unusual, in most cases this could probably be solved, but I tested only a small fraction of the titles for the system. The second possible failure point is if a game has an unusually large sprite sheet, which would cause the canvas that is created to be larger than the browser allows, making it unwritable. The current size/layout should avoid this but again, only a small fraction of total titles were tested.
 
 In either case if you open a ticket I'll look into it and see about getting the specified title working. 

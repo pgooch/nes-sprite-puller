@@ -59,6 +59,7 @@ var canvasSize = [0,0]; // Width, Height
 var startAt = -1;
 var sprites = [];
 function draw(){
+	var htmlMessage = ''; // This is used if there is a message to place above the ROM, like for ROMs missing CHR data
 
 	// Make sure we got some rawHex to work with
 	if(rawHex.length==0){
@@ -73,6 +74,11 @@ function draw(){
 			startAt += 512; // If there is a trainer block it is 512bytes
 		}
 		startAt += romDetails['PRGlength'];
+	}
+	// In some cases there is no CHR data, get a message ready and output the PRG instead (best we can do)
+	if(startAt==romDetails['romLength']){
+		startAt -= romDetails['PRGlength'];
+		htmlMessage = '<p>This rom down not have an CHR data, loading all PRG data. The sprite data is <i>probably</i> in there, along with a bunch of code.</p>';
 	}
 
 	// How many chunks of data do we have, thats also how many wide and tall
@@ -112,7 +118,7 @@ function draw(){
 			$('#output-container').html('Something has gone wrong and ther sprite sheet can not be loaded, let me know so I can sort it out.'); 
 			return false;
 		}else{
-			$('#output-container').html('<canvas width="'+canvasSize[0]+'" height="'+canvasSize[1]+'" id="canvas"/><br/><a href="#" class="download" download>Download Spite Sheet</a>'); 
+			$('#output-container').html(htmlMessage+'<canvas width="'+canvasSize[0]+'" height="'+canvasSize[1]+'" id="canvas"/><br/><a href="#" class="download" download>Download Spite Sheet</a>'); 
 		}
 	}
 	var canvasEl = document.getElementById('canvas');

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+	<title>Get NES char data</title>
+	<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+	<h1>NES ROM Sprite Puller</h1>
+
+	<fieldset>
+		<label for="file">Select a Rom </label> 	
+		<input type="file" id="file" name="file" />
+		<button name="reset">Reset Colors</button>
+		<br/>
+		<label for="colors">Color 1
+			<input id="colors" name="colors[0]" type="color" />
+		</label>
+		<label for="colors">Color 2
+			<input id="colors" name="colors[1]" type="color" />
+		</label>
+		<label for="colors">Color 3
+			<input id="colors" name="colors[2]" type="color" />
+		</label>
+		<label for="colors">Color 4
+			<input id="colors" name="colors[3]" type="color" />
+		</label>
+		<i>Colors should be in RGB Hex value or ther canvas compatible.</i>
+	</fieldset>
+	
+	<div id="output-container">&nbsp;</div>
+
+	<!-- Scripts -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+	<script src="./sprite-puller.js"></script>
+</body>
+</html>
+
+

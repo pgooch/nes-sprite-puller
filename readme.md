@@ -1,7 +1,7 @@
 # Nes Sprite Puller
 This is a javascript based NES sprite puller. It will create canvas with a a 1 or 2 column sprite sheet representing all the non PRG data in the ROM. Colors can be changes to whatever you'd like, but defaults to a gameboy-esqu four color gray. This parses the sprite data based on the information found on the NES dev wiki for the [PPU Format](http://wiki.nesdev.com/w/index.php/PPU_pattern_tables) in ROMs using the [iNES format](http://wiki.nesdev.com/w/index.php/INES). Once the image is generated a download line will appear below. Exports are in PNG format.
 
-If you would like to try it out finding those ROMs is on you for obvious reasons.
+If you would like to try it you can find it [on this projects github page](https://pgooch.github.io/nes-sprite-puller/), finding those ROMs on the other hand is up to you.
 
 ### Notes
 Some games buy have large blank sections or area of their sprite sheet that appears to be garbage. This can be caused by various things, usually blank spaces are just that, blank spaces in the CHR data, and garbage is code or compressed graphics mixed in. Palettes are stored in different locations depending on the game, so pulling them out to automatically colorize is not possible with some slow brute-force style checking.
